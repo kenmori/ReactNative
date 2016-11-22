@@ -9,25 +9,32 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+    NavigatorIOS
 } from 'react-native';
 
 export default class app extends Component {
   render() {
+
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+  <NavigatorIOS
+    initialRoute={{
+      component: MyScene,
+          title: 'My Initial Scene',
+    }}
+    style={{flex: 1}}
+  />
       </View>
     );
+  }
+}
+
+export default class MyScene extends Component {
+  render(){
+    return (
+        <div>fafa</div>
+    )
   }
 }
 
